@@ -25,8 +25,7 @@ final class UserController
 
         $UsersDAO = new UsersDAO();
         $user = new UserModel();
-        $user->setUsername($data['username'])
-            ->setEmail($data['email'])
+        $user->setEmail($data['email'])
             ->setFullname($data['fullname'])
             ->setPass($data['pass']);
     
@@ -46,7 +45,6 @@ final class UserController
         $UsersDAO = new UsersDAO();
         $user = new UserModel();
         $user->setId((int) $data['id'])
-            ->setUsername($data['username'])
             ->setEmail($data['email'])
             ->setFullname($data['fullname'])
             ->setPass($data['pass']);

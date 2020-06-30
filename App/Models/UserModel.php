@@ -12,11 +12,6 @@ final class UserModel
     /**
      * @var string
      */
-    private $username;
-
-    /**
-     * @var string
-     */
     private $email;
 
     /**
@@ -46,22 +41,6 @@ final class UserModel
         $this->id = $id;
         return $this;
     }
-
-
-    /**
-     * @return string
-     */
-    public function getUsername(): string
-    {
-        return $this->username;
-    }
-    
-    public function setUsername(string $username): UserModel
-    {
-        $this->username = $username;
-        return $this;
-    }
-
     /**
      * @return string
      */

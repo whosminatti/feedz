@@ -18,7 +18,6 @@ class UsersDAO extends Conexao
         $users = $this->pdo
             ->query('SELECT
                     id,
-                    username,
                     email,
                     fullname,
                     pass
@@ -33,13 +32,11 @@ class UsersDAO extends Conexao
         $statment = $this->pdo
             ->prepare('INSERT INTO users VALUES(
                 null,
-                :username,
                 :email,
                 :fullname,
                 :pass
             );');
         $statment->execute([
-            'username' => $user->getUsername(),
             'email' => $user->getEmail(),
             'fullname' => $user->getFullname(),
             'pass' => $user->getPass()
@@ -50,7 +47,6 @@ class UsersDAO extends Conexao
     {
         $statement = $this->pdo
             ->prepare('UPDATE users SET
-                    username = :username,
                     email = :email,
                     fullname = :fullname,
                     pass = :pass
@@ -58,7 +54,6 @@ class UsersDAO extends Conexao
                     id = :id
             ;');
         $statement->execute([
-            'username' => $user->getUsername(),
             'email' => $user->getEmail(),
             'fullname' => $user->getFullname(),
             'pass' => $user->getPass(),
