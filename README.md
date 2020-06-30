@@ -1,4 +1,4 @@
-# teste-feedz
+# Desafio Feedz
 
 <h3>O desafio</h3>
 Implementar um sistema para cadastro de usuários com login e senha, utilizando o
