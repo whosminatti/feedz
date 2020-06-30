@@ -11,4 +11,4 @@ dos sistema, poderão ser feito com Bootstrap 3 ou 4.
 
 <hr>
 
-<h4>Ideia</h4>: Criar uma API pra ser consumida por um front-end.
+<h4>Ideia</h4> Criar uma API pra ser consumida por um front-end.
