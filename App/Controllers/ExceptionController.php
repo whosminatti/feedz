@@ -11,15 +11,14 @@ final class ExceptionController
     public function test(Request $request, Response $response, array $args): Response
     {
         try {
-            // Código...
-            throw new TestException("Testando...");
+            throw new TestException("Acesso negado.");
             return $response->withJson(['msg' => 'ok']);
         } catch(TestException $ex) {
             return $response->withJson([
                 'error' => TestException::class,
                 'status' => 400,
                 'code' => '003',
-                'userMessage' => "Testando apenas...",
+                'userMessage' => "Acesso negado.",
                 'developerMessage' => $ex->getMessage()
             ], 400);
         } catch(\InvalidArgumentException $ex) {

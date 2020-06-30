@@ -63,8 +63,8 @@ final class UserController
         $queryParams = $request->getQueryParams();
 
         $UsersDAO = new UsersDAO();
-        $id = settype($queryParams['id'], "integer");
-        $UsersDAO->deletePermissions($id);
+        $id = (int) $queryParams['id'];
+        $UsersDAO->deleteUsers($id);
 
         $response = $response->withJson([
             'message' => 'Excluída com sucesso!'
