@@ -3,19 +3,18 @@ use teste_feedz;
 
 CREATE TABLE users (
   id int NOT NULL AUTO_INCREMENT,
-  username varchar(40) NOT NULL,
   email varchar(255) NOT NULL,
   fullname varchar(255) NOT NULL,
   pass varchar(255) NOT NULL,
   PRIMARY KEY (ID),
-  UNIQUE (username)
+  UNIQUE (email)
 );
 
 
-INSERT INTO users (id, username, email, fullname, pass)
-VALUES (null, 'whosminatti', 'minatti.leandro@gmail.com', 'Leandro Minatti de Souza', '987654321');
-INSERT INTO users (id, username, email, fullname, pass)
-VALUES (null, 'minatti', 'minatti.leandro@gmail.com', 'Leandro Minatti de Souza', '987654321');
+INSERT INTO users (id, email, fullname, pass)
+VALUES (null, 'minatti.leandro@gmail.com', 'Leandro Minatti de Souza', '987654321');
+INSERT INTO users (id, email, fullname, pass)
+VALUES (null, 'minatti.leandro@gmail.com', 'Leandro Minatti de Souza', '987654321');
 
 
 
@@ -25,18 +24,17 @@ FROM users;
 
 SELECT 
   id,
-	username,
 	email, 
   fullname
 FROM users
-WHERE username = ''
-ORDER BY username;
+WHERE email =''
+ORDER BY fullname;
 
 UPDATE users
 SET 
-	username = ''
+	email = ''
 WHERE 
-	username = '';
+	id = ;
     
 DELETE FROM users 
-WHERE username = '';
+WHERE id = ;

@@ -27,7 +27,7 @@ final class UserController
         $user = new UserModel();
         $user->setEmail($data['email'])
             ->setFullname($data['fullname'])
-            ->setPass($data['pass']);
+            ->setPass(password_hash($data['pass'],PASSWORD_DEFAULT));
     
 
         $UsersDAO->insertUsers($user);

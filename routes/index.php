@@ -29,9 +29,20 @@ $container['view'] = function ($container){
 };
 
 // ========================
-$app->get('/exception-test', ExceptionController::class . ':test');
+// $app->get('/exception-test', ExceptionController::class . ':test');
+$app->post('/login', function($request, $response){
+    $email = $request->getParam('email');
+    $pass = $request->getParam('pass');
+});
 
+$app->post('/signup', function($request, $response){
+    $email = $request->getParam('email');
+    $fullname = $request->getParam('fullname');
+    $pass = $request->getParam('pass');
 
+    insertUser($email, $fullname, $pass);
+    
+});
 
 $app->get('/', function ($request, $response, $args) {
     return $this->view->render($response, 'index.html');
